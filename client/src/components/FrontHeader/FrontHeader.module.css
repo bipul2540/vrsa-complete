@@ -1,0 +1,45 @@
+.main__container {
+  display: flex;
+  justify-content: space-between;
+
+  padding: var(--py-1) var(--px-5);
+  align-items: center;
+  position: relative;
+  /* border-bottom: 1px solid var(--gray-color); */
+}
+
+.logo {
+  font-size: var(--text-l);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.lists {
+  display: flex;
+  gap: 3rem;
+}
+
+.list__item {
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.list__item:hover {
+  color: var(--primary-color);
+}
+
+@media only screen and (max-width: 760px) {
+  .main__container {
+    padding: var(--py-1) var(--px-2);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .lists {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,42 @@
+.close__button {
+  cursor: pointer;
+  padding: 0.1rem;
+  background-color: rgb(223, 238, 245);
+
+  display: inline-block;
+  border-radius: 50%;
+  transition: var(--transition);
+  position: relative;
+}
+
+.close__icon {
+  font-size: 3rem;
+  color: gray;
+  transition: var(--transition);
+}
+.close__icon:hover {
+  transform: rotate(1deg) scale(0.92);
+  color: var(--primary-color);
+}
+
+.close__button:hover {
+  transform: scale(0.92);
+}
+
+.label {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -3rem;
+  background-color: rgb(186, 186, 186);
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.6rem;
+  border-radius: 5rem;
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+.close__icon:hover ~ .label {
+  display: block;
+}

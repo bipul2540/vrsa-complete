@@ -1,0 +1,48 @@
+.container {
+  background: radial-gradient(
+    circle,
+    rgba(34, 193, 195, 0.1) 0%,
+    rgba(253, 187, 45, 0.1) 100%
+  );
+  height: 100vh;
+}
+
+.main__container {
+  padding: var(--px-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__section .info {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.info__student {
+  color: #fd8301;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 760px) {
+  .main__container {
+    padding: var(--px-2);
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .main__container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.primary_btn {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.primary_btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.secondary_btn {
+  background-color: transparent;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.secondary_btn:hover {
+  color: white;
+  background-color: var(--secondary-color);
+}

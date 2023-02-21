@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --device-sm: 450px;
+  --device-sm-2: 560px;
+  --device-md: 760px;
+  --device-lg: 1024px;
+}
