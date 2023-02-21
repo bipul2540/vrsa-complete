@@ -86,6 +86,13 @@ function LoginForm() {
           Sign in with Google
         </button>
       </div>
+
+      <div className={styles.login__option}>
+        <p>
+          did't have an account?
+          <Link to='/create-account'>Create account</Link>{" "}
+        </p>
+      </div>
     </>
   );
 }
