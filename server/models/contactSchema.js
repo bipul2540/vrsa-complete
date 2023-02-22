@@ -19,6 +19,6 @@ const contactSchema = mongoose.Schema({
   },
 });
 
-const contactUs = mongoose.model("vrsa-app", contactSchema, "contact-us");
+const contactusSchema = mongoose.model("vrsa-app", contactSchema, "contact-us");
 
-export default contactUs;
+export default contactusSchema;

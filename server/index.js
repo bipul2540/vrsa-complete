@@ -5,7 +5,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
+
 import contactRoutes from "./routes/contactUs.js";
+import { apiLimiter } from "./middleware/apiLImiter.js";
 
 /* CONFIGURATION */
 
@@ -23,7 +25,7 @@ app.use(cors());
 
 //ROUTES CONGIFUGARATION
 
-app.use("/api", contactRoutes);
+app.use("/api/contact-us", apiLimiter, contactRoutes);
 
 /*================================================= */
 

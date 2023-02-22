@@ -1,0 +1,15 @@
+.link__img {
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: rgb(231, 243, 255);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.link__img:hover{
+    background-color: rgb(193, 226, 255);
+}
+
+.image {
+  width: 30px;
+}

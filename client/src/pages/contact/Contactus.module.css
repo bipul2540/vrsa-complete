@@ -3,8 +3,9 @@
   padding: 1rem var(--px-5);
   width: 100%;
   margin: 0 auto;
-  gap: 5rem;
-  background-color: #59c6fd;
+  height: 100%;
+  /* gap: 5rem; */
+  background-color: #59c6fd69;
   background-image: radial-gradient(
       at 47% 33%,
       hsl(216.48, 73%, 53%) 0,
@@ -18,8 +19,8 @@
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
   background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
-  border: 1px solid rgba(165, 32, 32, 0.125);
+  /* border-radius: 12px; */
+
 }
 
 .right__container {
@@ -27,7 +28,26 @@
   background-color: #fff;
   height: 100%;
   padding: 1rem 2rem;
-  border-radius: 12px;
+  /* border-radius: 12px; */
+}
+
+
+.other__contact__option p{
+  margin-top: 1rem;
+  color: gray;
+  text-align: center;
+}
+.h1__tag{
+
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.image__links{
+
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.6rem;
 }
 
 @media only screen and (max-width: 750px) {
