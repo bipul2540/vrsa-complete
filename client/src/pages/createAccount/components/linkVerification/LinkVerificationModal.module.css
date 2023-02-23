@@ -1,0 +1,52 @@
+
+.animated__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.815);
+    width: 100%;
+    z-index: 1;
+    height: 110%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: "hidden";
+}
+.modal__container{
+    height: 100%;
+}
+
+.main__container{
+    background-color: white;
+    padding: 2rem;
+    max-width: 420px;
+    margin: 0 auto;
+    margin-top: 10rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info__container{
+    margin-bottom: 1rem;
+}
+
+.info__container h1{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.info__container p{
+    color: gray;
+}
+
+.goto_login_btn{
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+    background-color: var(--success-color);
+    color: white;
+    border-radius: 0.5rem;
+}

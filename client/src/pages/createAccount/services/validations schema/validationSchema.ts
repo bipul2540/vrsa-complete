@@ -9,7 +9,12 @@ export const validationSchema = Yup.object().shape({
     [Yup.ref("password")],
     "Passwords must match"
   ),
-  firstName: Yup.string().required("Name is required"),
-  lastName: Yup.string(),
+  firstName: Yup.string()
+    .required("Name is required")
+    .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed for this field "),
+  lastName: Yup.string().matches(
+    /^[aA-zZ\s]+$/,
+    "Only alphabets are allowed for this field "
+  ),
   roles: Yup.string().required("This field is compulsory"),
 });

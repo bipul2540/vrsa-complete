@@ -1,0 +1,41 @@
+.main__container {
+  background-color: rgba(253, 190, 190, 0.416);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  color: #e71d36;
+}
+
+.design {
+  padding: 1.6rem 0.3rem;
+  background-color: #e71d36;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.content__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message__box{
+
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.close__icon{
+    margin-right: 0.5rem;
+    cursor: pointer;
+    background-color: rgb(255, 215, 215);
+    border-radius: 50%;
+    transition: var(--transition);
+    margin-left: 0.3rem;
+}
+
+.close__icon:hover{
+    background-color: #e71d354f;
+}

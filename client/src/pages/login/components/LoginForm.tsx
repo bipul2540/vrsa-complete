@@ -5,6 +5,9 @@ import { useFormik } from "formik";
 import { validationSchema } from "./../services/validationSchema.js";
 import { BiError } from "react-icons/bi";
 import InputError from "../../../components/InputError/InputError";
+import { loginApi } from "../services/API/loginApi";
+import { useState } from "react";
+import ShowError from "../../../components/ShowError/ShowError";
 
 const initialValues = {
   email: "",
@@ -12,18 +15,30 @@ const initialValues = {
 };
 
 function LoginForm() {
+  const [isError, setError] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+
   const { values, errors, touched, handleBlur, handleSubmit, handleChange } =
     useFormik({
       initialValues,
       validationSchema: validationSchema,
-      onSubmit: (values, action) => {
+      onSubmit: async (values, action) => {
         console.log(values);
+
+        const res = await loginApi(values);
+        console.log(res);
+
+        if (res.status === 401) {
+          setErrMsg(res.data.message);
+          setError(true);
+          action.resetForm();
+        }
       },
     });
-  console.log(errors);
 
   return (
     <>
+      {isError && <ShowError email='' err_msg={errMsg} setError={setError} />}
       <form className={styles.form__container} onSubmit={handleSubmit}>
         <div className={styles.form__group}>
           <label htmlFor='Email'>Email</label>

@@ -1,6 +1,7 @@
 import React from "react";
 import InputError from "../../../../components/InputError/InputError";
 import styles from "./FormPage.module.css";
+import { useSpring, animated } from "react-spring";
 
 type UserFormParams = {
   values: any;
@@ -17,8 +18,13 @@ const FormPageTwo = ({
   touched,
   handleBlur,
 }: UserFormParams) => {
+  const translate = useSpring({
+    from: { transform: "translateX(100%)" },
+    to: { transform: "translateX(0)" },
+  });
+
   return (
-    <>
+    <animated.div style={translate}>
       <div className={styles.name__container}>
         <div className={`${styles.form__group} ${styles.f__name}`}>
           <label htmlFor=''>First name</label>
@@ -53,6 +59,7 @@ const FormPageTwo = ({
           />
         </div>
       </div>
+
       <div className={styles.form__group}>
         <label className={styles.select__label} htmlFor='roles'>
           Choose a role
@@ -63,7 +70,11 @@ const FormPageTwo = ({
           className={styles.roles__input__field}
           value={values.roles}
           onChange={handleChange}
-          onBlur={handleBlur}>
+          onBlur={handleBlur}
+          placeholder='-----'>
+          <option value='' selected disabled hidden>
+            --------select--------
+          </option>
           <option value='student'>student</option>
           <option value='teacher'>Teacher</option>
           <option value='HOD'>HOD(head of department)</option>
@@ -71,11 +82,11 @@ const FormPageTwo = ({
         </select>
         <InputError
           isError={errors.roles}
-          isTouched={touched.touched}
+          isTouched={touched.roles}
           err_msg={errors.roles}
         />
       </div>
-    </>
+    </animated.div>
   );
 };
 

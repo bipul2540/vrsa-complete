@@ -8,6 +8,7 @@ import morgan from "morgan";
 
 import contactRoutes from "./routes/contactUs.js";
 import { apiLimiter } from "./middleware/apiLImiter.js";
+import authRoutes from "./routes/auth.js";
 
 /* CONFIGURATION */
 
@@ -26,6 +27,7 @@ app.use(cors());
 //ROUTES CONGIFUGARATION
 
 app.use("/api/contact-us", apiLimiter, contactRoutes);
+app.use("/api/user", authRoutes);
 
 /*================================================= */
 

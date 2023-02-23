@@ -12,7 +12,19 @@ import { validationSchema } from "../../services/validations schema/validationSc
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { postUser } from "./../../services/API/postUser";
+import { useNavigate } from "react-router-dom";
+
+import { useState } from "react";
+import ShowError from "../../../../components/ShowError/ShowError";
+import LinkVerificationModal from "../linkVerification/LinkVerificationModal";
+
+import { useSpring, animated } from "react-spring";
+import { getUser } from "../../../../util/useToken";
+
 const CreateAccountForm = () => {
+  const translate = useSpring({ opacity: 1, from: { opacity: 0 } });
+
   const initialValues = {
     email: "",
     password: "",
@@ -22,16 +34,32 @@ const CreateAccountForm = () => {
     roles: "",
   };
 
+  const navigate = useNavigate();
+  const [isError, setError] = useState(false);
+  const [emailVal, setEmailval] = useState("");
+  const [loginSuccessPage, setLoginSuccessPage] = useState(false);
+
   const { values, errors, touched, handleBlur, handleSubmit, handleChange } =
     useFormik({
       initialValues,
       validationSchema: validationSchema,
-      onSubmit: (values, action) => {},
-    });
+      onSubmit: async (values, action) => {
+        await postUser(values).then((res) => {
+          setEmailval(values.email);
+          if (res === 403) {
+            navigate("/create-account");
+            goTo(0);
+            setError(true);
+            action.resetForm();
+          }
 
-  let handleSubmitButton = () => {
-    console.log(values);
-  };
+          if (res.status === 200) {
+            action.resetForm();
+            setLoginSuccessPage(true);
+          }
+        });
+      },
+    });
 
   const { steps, currentStepIndex, step, goTo, back } = useMultiStepForm([
     <FormPageOne
@@ -66,46 +94,59 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <div className={styles.main__container}>
-      <ToastContainer />
-      <div className={styles.heading}>
-        <h1>
-          <img src={student} alt='' />
-          Create an account
-        </h1>
-        <p>Get started with an account on vrsa.</p>
-      </div>
-      <form className={styles.form__control} onSubmit={handleSubmit}>
-        {step}
-
-        <div className={styles.back__next_btn}>
-          {currentStepIndex !== 0 ? (
-            <p className={styles.goto__page_btn} onClick={() => back()}>
-              <span>
-                <GrFormPreviousLink className={styles.icon} />
-              </span>
-              Back{" "}
-            </p>
-          ) : null}
-
-          {currentStepIndex !== 1 ? (
-            <p className={styles.goto__page_btn} onClick={handleNextClick}>
-              Next{" "}
-              <span>
-                <GrFormNextLink className={styles.icon} />
-              </span>{" "}
-            </p>
-          ) : (
-            <button
-              className={styles.goto__page_btn_register}
-              type='submit'
-              onClick={handleSubmitButton}>
-              Register
-            </button>
-          )}
+    <>
+      <div className={styles.main__container}>
+        <ToastContainer />
+        <div className={styles.heading}>
+          <h1>
+            <img src={student} alt='' />
+            Create an account
+          </h1>
+          <p>Get started with an account on vrsa.</p>
         </div>
-      </form>
-    </div>
+        {/* backend errro */}
+
+        {isError && (
+          <animated.div style={translate}>
+            <ShowError
+              setError={setError}
+              email={emailVal}
+              err_msg='Email id is already registered, please login'
+            />
+          </animated.div>
+        )}
+
+        {/* end */}
+        <form className={styles.form__control} onSubmit={handleSubmit}>
+          {step}
+          <div className={styles.back__next_btn}>
+            {currentStepIndex !== 0 ? (
+              <p className={styles.goto__page_btn} onClick={() => back()}>
+                <span>
+                  <GrFormPreviousLink className={styles.icon} />
+                </span>
+                Back{" "}
+              </p>
+            ) : null}
+
+            {currentStepIndex !== 1 ? (
+              <p className={styles.goto__page_btn} onClick={handleNextClick}>
+                Next{" "}
+                <span>
+                  <GrFormNextLink className={styles.icon} />
+                </span>{" "}
+              </p>
+            ) : (
+              <button className={styles.goto__page_btn_register} type='submit'>
+                Register
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+
+      {loginSuccessPage && <LinkVerificationModal />}
+    </>
   );
 };
 
