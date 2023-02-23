@@ -5,7 +5,7 @@
   --secondary-color: #59c6fd;
 
   --danger-color: #e71d36;
-  --success-color: #63E4A6;
+  --success-color: #00ffc5;
 
   --text-color: #3f3a64;
   --gray-color: #696969;
@@ -42,6 +42,9 @@
   --device-sm-2: 550px;
   --device-md: 760px;
   --device-lg: 1024px;
+
+  --box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 body {

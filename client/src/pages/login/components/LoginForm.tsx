@@ -8,6 +8,8 @@ import InputError from "../../../components/InputError/InputError";
 import { loginApi } from "../services/API/loginApi";
 import { useState } from "react";
 import ShowError from "../../../components/ShowError/ShowError";
+import { getUser, setToken } from "../../../util/useToken";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -15,6 +17,7 @@ const initialValues = {
 };
 
 function LoginForm() {
+  const navigate = useNavigate();
   const [isError, setError] = useState(false);
   const [errMsg, setErrMsg] = useState("");
 
@@ -23,15 +26,22 @@ function LoginForm() {
       initialValues,
       validationSchema: validationSchema,
       onSubmit: async (values, action) => {
-        console.log(values);
-
         const res = await loginApi(values);
-        console.log(res);
 
         if (res.status === 401) {
           setErrMsg(res.data.message);
           setError(true);
           action.resetForm();
+        }
+
+        if (res.status === 200) {
+          setToken(res.data.token);
+
+          const user = getUser();
+
+          if (user && user.roles) {
+            navigate(`/${user.roles}`);
+          }
         }
       },
     });

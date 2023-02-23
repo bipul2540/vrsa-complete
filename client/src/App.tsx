@@ -2,6 +2,7 @@ import "./styles/App.css";
 import Button from "./components/Button/Button";
 import Main from "./pages/main/Main";
 import { Outlet } from "react-router-dom";
+import PageLoader from "./components/PageLoader/PageLoader";
 
 function App() {
   return (
