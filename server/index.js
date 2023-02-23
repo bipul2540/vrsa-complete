@@ -9,6 +9,8 @@ import morgan from "morgan";
 import contactRoutes from "./routes/contactUs.js";
 import { apiLimiter } from "./middleware/apiLImiter.js";
 import authRoutes from "./routes/auth.js";
+import studentRoutes from "./routes/students.js";
+import marksRoute from "./routes/marks.js";
 
 /* CONFIGURATION */
 
@@ -28,6 +30,9 @@ app.use(cors());
 
 app.use("/api/contact-us", apiLimiter, contactRoutes);
 app.use("/api/user", authRoutes);
+
+app.use("/api/students", studentRoutes);
+app.use("/api/marks", marksRoute);
 
 /*================================================= */
 

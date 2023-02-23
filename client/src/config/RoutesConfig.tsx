@@ -10,6 +10,11 @@ import HodPage from "../pages/hod/HodPage";
 import Marks from "../pages/students/Marks";
 import TeacherPage from "../pages/teacher/TeacherPage";
 import { AuthProvider } from "../util/authProvider";
+import Home from "../pages/home/Home";
+import { AddUser } from "../pages/addUser/AddUser";
+import ViewUser from "../pages/viewUser/ViewUser";
+import Analyze from "../pages/analyze/Analyze";
+import RemoveUser from "../pages/removeUser/RemoveUser";
 
 const user = getUser();
 console.log(user);
@@ -71,6 +76,28 @@ const routerConfig = createBrowserRouter([
         <TeacherPage />
       </TeacherAuth>
     ),
+    children: [
+      {
+        path: "/teacher/home",
+        element: <Home />,
+      },
+      {
+        path: "/teacher/home/add-user",
+        element: <AddUser />,
+      },
+      {
+        path: "/teacher/home/view-user",
+        element: <ViewUser />,
+      },
+      {
+        path: "/teacher/home/analyze-marks",
+        element: <Analyze />,
+      },
+      {
+        path: "/teacher/home/edit-user",
+        element: <RemoveUser />,
+      },
+    ],
   },
 ]);
 
