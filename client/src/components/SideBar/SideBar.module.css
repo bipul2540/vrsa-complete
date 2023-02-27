@@ -1,9 +1,12 @@
 .main__container {
   background-color: #fff;
   height: 100%;
-  width: 8rem;
+  width: 10rem;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.526);
   clip-path: inset(0px -10px 0px 0px);
+  position: fixed;
+  top: 50px;
+  z-index: 4;
 }
 
 .sidebar__items {
@@ -18,13 +21,7 @@
 
 .item {
   width: initial;
-  padding: 0.4rem 1rem;
   transition: var(--transition);
-}
-
-
-.item:first-child{
-    background-color: rgb(238, 245, 252);
 }
 
 .item:hover {
@@ -37,7 +34,9 @@
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
+  padding: 0.4rem 1rem;
 }
+
 
 .name {
   text-transform: capitalize;
@@ -49,4 +48,29 @@
 
 .icon{
     font-size: 1.3rem;
+}
+
+@media only screen and (max-width:620px){
+
+  .main__container{
+    width: 3rem;
+    z-index: 500;
+  }
+
+  .link{
+    position: relative;
+  }
+  .name{
+    position: absolute;
+    left: 0rem;
+    top: 1.5rem;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .link:hover ~ .name{
+    display: block;
+  }
+
 }

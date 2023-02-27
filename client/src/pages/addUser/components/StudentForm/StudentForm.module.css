@@ -1,0 +1,128 @@
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+  background-color: #fff;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #731dd8;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.icon {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #8548c9;
+}
+
+
+
+
+.gender__label{
+  color: gray;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.label__h1{
+  display: flex;
+}
+
+.required__icon{
+  font-size: 0.4rem;
+}
+
+.gender__error_msg{
+  color: var(--danger-color);
+}
+
+
+.gender__select_div{
+  display: flex;
+  flex-direction: column;
+}
+
+.selected__select{
+  color: gray;
+}
+
+.gender__select{
+  border: 1px solid gainsboro;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 0.4rem;
+  font-weight: 500;
+  color: gray;
+}
+.gender__select:focus{
+  border: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 8px var(--primary-color);
+}
+
+
+.first_and_lastName,
+.email_and_phone,
+.city__postal,
+.register__section,
+.year__depart__sem {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.register__btn {
+  width: 10rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  background-color: #731dd8 !important;
+  color: white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.register__btn:hover {
+  background-color: #6b00e6 !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .year__depart__sem {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .first_and_lastName,
+  .email_and_phone,
+  .city__postal,
+  .register__section,
+  .year__depart__sem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+}

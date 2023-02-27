@@ -1,7 +1,12 @@
 import React from "react";
+import ToalStudents from "../../components/MainPageComponents/TotalStudents/TotlStudents";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <ToalStudents />
+    </div>
+  );
 }
 
 export default Home;

@@ -1,0 +1,108 @@
+
+.barchart{
+    width: 250px;
+    height: 180px;
+    overflow-x: auto;
+}
+
+
+.barchart::-webkit-scrollbar{
+    display: none;
+}
+.barchart{
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+
+
+.main__container{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 0 2rem;
+    background-color: #fff;;
+    border-radius: 1rem;
+}
+
+.top__bar{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon{
+    padding: 0.5rem;
+    border-radius: 50%;
+   background-color: rgb(229, 237, 251);
+
+
+}
+
+.group__icon{
+    font-size: 1.4rem;
+    color: rgb(208, 69, 27);
+}
+
+.header{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bar__container{
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.number{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(66, 66, 66);
+}
+
+.graph__area{
+ padding: 1rem;
+ position: relative;
+}
+
+
+.right__scroll__icons{
+ position: absolute;  
+ top: 4rem;
+ right: -0.5rem;
+ color: gray;
+ cursor: pointer;
+ 
+}
+
+.right__scroll__icons:hover{
+    color: var(--primary-color);
+}
+
+.left__scroll__icons{
+    position: absolute;top: 4rem;
+    left: -0.5rem;
+    color: gray;
+ cursor: pointer;
+
+}
+
+.left__scroll__icons:hover{
+    color: var(--primary-color);
+}
+
+.select__box{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 0.8rem;
+    border: 1px solid rgb(200, 200, 200);
+}
+.option{
+    cursor: pointer;
+}
+
+.option:hover{
+    color:red
+}

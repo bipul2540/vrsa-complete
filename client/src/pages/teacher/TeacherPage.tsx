@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import ToalStudents from "../../components/MainPageComponents/TotalStudents/TotlStudents";
 import NavBar from "../../components/NavBar/NavBar";
 import PageLoader from "../../components/PageLoader/PageLoader";
 import SideBar from "../../components/SideBar/SideBar";

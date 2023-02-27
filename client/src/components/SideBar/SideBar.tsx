@@ -4,6 +4,7 @@ import { FaUserPlus, FaHouseUser, FaUsers } from "react-icons/fa";
 import { FcComboChart } from "react-icons/fc";
 import { CgFolderRemove } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import UserProfile from "../UserProfile/UserProfile";
 
 type props = {
   links: any;
@@ -13,6 +14,7 @@ const SideBar = ({ links }: props) => {
   return (
     <div className={styles.main__container}>
       <div className={styles.sidebar__items}>
+        <UserProfile />
         <div className={styles.item}>
           <Link to={home} className={styles.link}>
             <h1 className={styles.name}>Home</h1>
@@ -47,7 +49,6 @@ const SideBar = ({ links }: props) => {
           </Link>
         </div>
       </div>
-      <div className='close__sidebar__icon'></div>
     </div>
   );
 };

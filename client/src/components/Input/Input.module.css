@@ -1,0 +1,44 @@
+
+.form__group{
+display: flex;
+flex-direction: column;
+width: 100%;
+    
+}
+
+.input__label{
+    color: gray;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+
+
+.input__field{
+
+    padding: 0.4rem;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 1px solid gainsboro;
+    font-weight: 500;
+}
+.form__group input:focus {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0px 0px 6px var(--primary-color);
+  }
+
+.required__field{
+    display: flex;
+}
+
+.required__icon{
+    color: gray;
+    font-size: 0.35rem;
+}
+
+.error__message{
+    font-size: 0.7rem;
+    margin-left: 0.6rem;
+    color: var(--danger-color);
+}
+

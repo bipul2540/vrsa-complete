@@ -31,6 +31,7 @@ const studentSchema = mongoose.Schema({
   },
   year: {
     type: String,
+    required: true,
   },
   department: {
     type: String,
@@ -38,10 +39,12 @@ const studentSchema = mongoose.Schema({
   },
   semester: {
     type: String,
+    required: true,
   },
   section: {
     type: String,
     default: "",
+    required: true,
   },
 });
 

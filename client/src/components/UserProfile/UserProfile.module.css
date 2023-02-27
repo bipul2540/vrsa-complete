@@ -1,0 +1,56 @@
+.main__container{
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0.4rem 1rem;
+color: #fff;
+background-color: rgb(77, 50, 187);
+border-radius: 4rem;
+width: 100%;
+text-align: center;
+}
+
+
+.roles__name{
+
+font-size: 0.76rem;
+font-weight: bold;
+}
+
+.image__icon{
+display: flex;
+align-items: center;
+font-size: 0.9rem;
+gap: 1rem;
+
+}
+
+
+
+
+.small_device{
+    display: none;
+}
+
+
+.image{
+    width: 25px;
+}
+
+@media only screen and (max-width: 620px) {
+    .main__container{
+        border-radius: 0.2rem;
+        padding: 0.2rem 0.5rem;
+    }
+    .roles__name{
+        display: none;
+    }
+
+    .small_device{
+        display: inline-block;
+        font-weight: bold;
+        font-size: 1.2rem;
+        width: 100%;
+    }
+}

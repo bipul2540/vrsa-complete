@@ -1,0 +1,42 @@
+.label{
+    color: gray;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .label__h1{
+    display: flex;
+  }
+  
+  .required__icon{
+    font-size: 0.4rem;
+  }
+  
+  .error_msg{
+    color: var(--danger-color);
+  }
+  
+  
+  .select_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .selected__select{
+    color: gray;
+  }
+  
+  .select{
+    border: 1px solid gainsboro;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    color: gray;
+  }
+  .select:focus{
+    border: 2px solid var(--primary-color);
+    box-shadow: 0px 0px 8px var(--primary-color);
+  }
