@@ -3,6 +3,6 @@ import { updateMarks } from "../controllers/marks.js";
 
 const router = express.Router();
 
-router.get("/update-marks", updateMarks);
+router.post("/update-marks", updateMarks);
 
 export default router;

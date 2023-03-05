@@ -1,7 +1,7 @@
 .btn {
   border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 3rem;
   letter-spacing: 1px;
   cursor: pointer;
   transition: var(--transition);
@@ -13,7 +13,7 @@
 }
 
 .primary_btn:hover {
-  background-color: var(--secondary-color);
+  background-color: #1663c8;
 }
 
 .secondary_btn {
@@ -23,5 +23,6 @@
 
 .secondary_btn:hover {
   color: white;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 0.1px solid gainsboro;
 }

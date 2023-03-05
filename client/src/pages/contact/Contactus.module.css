@@ -5,20 +5,14 @@
   margin: 0 auto;
   height: 100%;
   /* gap: 5rem; */
-  background-color: #59c6fd69;
-  background-image: radial-gradient(
-      at 47% 33%,
-      hsl(216.48, 73%, 53%) 0,
-      transparent 59%
-    ),
-    radial-gradient(at 82% 65%, hsl(213.95, 79%, 69%) 0, transparent 55%);
+  background-color: #e1f5ff69;
 }
 
 .left__container {
   padding: 1rem 2rem;
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(208, 208, 208, 0.4);
   /* border-radius: 12px; */
 
 }

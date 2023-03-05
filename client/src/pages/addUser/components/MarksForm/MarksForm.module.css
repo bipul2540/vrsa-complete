@@ -52,3 +52,147 @@
     font-size: 1.2rem;
   }
 }
+
+
+.findStudent__form{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: ghostwhite;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  box-shadow: var(--box-shadow);
+}
+
+
+
+
+.sem__search{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.search__register__course{
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #d8e5f9;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search__icon{
+  font-size: 1.5rem;
+  color: #0a61e3;
+}
+
+.search__register__course:hover{
+  background-color: #e6effb;
+}
+
+
+.marks__entry__group{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.marks__field_input{
+  width: 6rem;
+  border: 1px solid gray;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.3rem;
+  outline: none;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: gray;
+}
+
+.marks__field_input:focus{
+  border: 2px solid var(--primary-color);
+}
+
+
+.input__lines{
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.first__line__input{
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.second__line__input{
+
+  display: flex;
+  gap: 1rem;
+
+}
+
+
+.input__container{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid rgb(222, 222, 222);
+  padding: 0.5rem 1rem;
+}
+.input__label{
+  font-weight: 500;
+  background-color: #fcfcfc;
+color: rgb(75, 75, 75);
+  width: 6rem;
+  font-weight: bold;
+ display: flex;
+}
+
+
+.instruction{
+  color: rgb(36, 189, 189);
+}
+
+
+.reg__and__label__container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.regno__label{
+  color: gray;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.regNo{
+  padding: 0.4rem;
+  outline: none;
+  border-radius: 0.5rem;
+  border: 1px solid gainsboro;
+  font-weight: 500;
+}
+
+.regNo:focus{
+  border: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 8px var(--primary-color);
+}
+
+
+
+.book__animation{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+
+.book__animation img{
+  width: 5rem
+}

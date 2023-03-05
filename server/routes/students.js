@@ -1,6 +1,6 @@
 import express from "express";
 import { body } from "express-validator";
-import { postStudent, getStudents } from "../controllers/students.js";
+import { postStudent, getStudentsWithRegNo } from "../controllers/students.js";
 
 const router = express.Router();
 
@@ -12,7 +12,6 @@ const studentregisterValidator = [
 ];
 
 router.post("/register-student", ...studentregisterValidator, postStudent);
-
-router.get("/all-students", getStudents);
+router.post("/:regNo", getStudentsWithRegNo);
 
 export default router;

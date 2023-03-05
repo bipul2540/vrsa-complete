@@ -1,8 +1,16 @@
+
+.select_div{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .label{
     color: gray;
     font-size: 0.8rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   
   .label__h1{
@@ -17,20 +25,13 @@
     color: var(--danger-color);
   }
   
-  
-  .select_div{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
   .selected__select{
     color: gray;
   }
   
   .select{
     border: 1px solid gainsboro;
-    padding: 0.5rem;
+    padding: 0.4rem;
     outline: none;
     border-radius: 0.4rem;
     font-weight: 500;

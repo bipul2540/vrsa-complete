@@ -5,11 +5,11 @@
   align-items: center;
   gap: 0.8rem;
   border-radius: 0.5rem 0 0 0.5rem;
-  color: #e71d36;
+  color: #e42f44;
 }
 
 .design {
-  padding: 1.6rem 0.3rem;
+  padding: 2.4rem 0.3rem;
   background-color: #e71d36;
   border-radius: 1.5rem 0 0 1.5rem;
 }
@@ -30,7 +30,7 @@
 .close__icon{
     margin-right: 0.5rem;
     cursor: pointer;
-    background-color: rgb(255, 215, 215);
+    background-color: rgb(255, 224, 224);
     border-radius: 50%;
     transition: var(--transition);
     margin-left: 0.3rem;
@@ -38,4 +38,9 @@
 
 .close__icon:hover{
     background-color: #e71d354f;
+}
+
+.field{
+  font-weight: 500;
+  font-size: 0.9rem;
 }

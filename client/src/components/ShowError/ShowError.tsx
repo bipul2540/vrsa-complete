@@ -9,7 +9,7 @@ type errProps = {
 const ShowError = ({ err_msg, email, setError }: errProps) => {
   setTimeout(() => {
     setError(false);
-  }, 40000);
+  }, 400000);
 
   return (
     <div className={styles.main__container}>
@@ -17,7 +17,7 @@ const ShowError = ({ err_msg, email, setError }: errProps) => {
       <div className={styles.content__container}>
         <h1 className={styles.message__box}>
           {email && (
-            <span>
+            <span className={styles.field}>
               {email}
               <br />
             </span>

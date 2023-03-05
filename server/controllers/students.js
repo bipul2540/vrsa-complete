@@ -5,16 +5,13 @@ export const postStudent = async (req, res) => {
     name,
     email,
     phone,
-    line1,
-    city,
-    postal_code,
-    state,
-    country,
+    address,
     gender,
     regNo,
     year,
     department,
     semester,
+    section,
   } = req.body;
 
   const user = await Student.findOne({ regNo });
@@ -28,29 +25,36 @@ export const postStudent = async (req, res) => {
       name,
       email,
       phone,
-      address: {
-        line1,
-        city,
-        postal_code,
-        state,
-        country,
-      },
+      address,
       gender,
       regNo,
       year,
       department,
       semester,
+      section,
     });
 
     await result.save();
     res.status(200).json({ message: "Student has been successfully added." });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(400).json({ message: err.message });
   }
 };
 
-export const getStudents = async (req, res) => {
-  const data = await Student.find();
+export const getStudentsWithRegNo = async (req, res) => {
+  const regNo = req.params.regNo;
+  console.log(regNo);
+  const student = await Student.findOne({ regNo });
 
-  res.status(200).json({ data: data });
+  if (student) {
+    res
+      .status(200)
+      .json({
+        regNo: student.regNo,
+        semester: student.semester,
+        section: student.section,
+      });
+  } else {
+    res.status(400).json({ message: "user not found" });
+  }
 };

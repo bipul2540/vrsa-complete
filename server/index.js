@@ -10,7 +10,9 @@ import contactRoutes from "./routes/contactUs.js";
 import { apiLimiter } from "./middleware/apiLImiter.js";
 import authRoutes from "./routes/auth.js";
 import studentRoutes from "./routes/students.js";
-import marksRoute from "./routes/marks.js";
+import marksRoutes from "./routes/marks.js";
+import bookRoutes from "./routes/books.js";
+import studentCoursesRoutes from './routes/studentCourses.js'
 
 /* CONFIGURATION */
 
@@ -32,7 +34,9 @@ app.use("/api/contact-us", apiLimiter, contactRoutes);
 app.use("/api/user", authRoutes);
 
 app.use("/api/students", studentRoutes);
-app.use("/api/marks", marksRoute);
+app.use("/api/marks", marksRoutes);
+app.use("/api/books", bookRoutes);
+app.use("/api/courses", studentCoursesRoutes)
 
 /*================================================= */
 
