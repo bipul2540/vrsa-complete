@@ -43,13 +43,28 @@ export const registerStudentCoures = async (req, res) => {
 
 export const getStudentCourse = async (req, res) => {
   const { regNo, semester } = req.body;
-  const reg = regNo.toUpperCase();
-
+  const reg = regNo.toLowerCase();
   const student = await StudentCourse.findOne({
     regNo: reg,
     semester,
   });
-  if (student) {
+
+  const seme = await StudentCourse.findOne({ regNo: reg });
+  if (student && seme) {
     res.status(200).json({ data: student.courses });
-  } else res.status(400).json({ message: "user not found" });
+  } else if (seme) {
+    res
+      .status(400)
+      .json({ message: "semester courses in not added in the database" });
+  } else {
+    res.status(400).json({ message: "user not found" });
+  }
+};
+
+export const getCourseWithUSN = async (req, res) => {
+  const { regNo } = req.body;
+
+  const course = await StudentCourse.findOne({ regNo });
+
+  console.log(course);
 };

@@ -56,6 +56,7 @@ const CourseForm = () => {
 
         const data = await registerCourse(values, inputValues);
         setUserAvialble(false);
+        console.log(data);
       },
     });
 

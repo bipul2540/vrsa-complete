@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
 
-const inernalSubSchema = {
-  subject_name: String,
-  internal_marks: Number,
-  assingment_marks: Number,
-};
-const externalSubSchema = {
-  subject_name: String,
-  external_marks: Number,
+const courses = {
+  course_name: String,
+  internal_marks: {
+    firstIa: String,
+    secondIa: String,
+    thirdIa: String,
+  },
+  assingment: String,
+  external_marks: String,
 };
 
 const markSchema = mongoose.Schema({
@@ -15,12 +16,11 @@ const markSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  internal: {
-    firstInternal: [inernalSubSchema],
-    secondInternal: [inernalSubSchema],
-    thirdInternal: [inernalSubSchema],
+  semester: {
+    type: String,
+    required: true,
   },
-  external: [externalSubSchema],
+  marks: [courses],
 });
 
 const Marks = mongoose.model("student-marks", markSchema);

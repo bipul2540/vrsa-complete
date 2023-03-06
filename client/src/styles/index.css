@@ -14,3 +14,59 @@
   --device-md: 760px;
   --device-lg: 1024px;
 }
+
+table{
+  width: 100%;
+
+}
+
+td img {
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+
+
+table,
+th,
+td {
+  padding: 0.7rem;
+  border-collapse: collapse;
+}
+
+
+
+
+thead th{
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #dbe1eb;
+}
+
+tbody tr:nth-child(even){
+  background-color: #0000000b;
+}
+
+tbody tr:hover{
+
+  background-color: #fff6;
+}
+
+.image__name{
+  display: flex;
+  align-items: center;
+}
+
+td:not(:first-of-type){
+  min-width: 11rem;
+  text-align: center;
+}
+
+tr, td{
+  cursor: pointer;
+  width: 3rem;
+}
+

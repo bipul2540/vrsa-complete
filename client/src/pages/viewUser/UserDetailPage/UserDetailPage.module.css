@@ -1,0 +1,171 @@
+.User__detail__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.back__header {
+  padding: 0.8rem 1rem;
+  border-bottom: 2px solid rgb(231, 231, 231);
+  display: flex;
+  align-items: center;
+}
+
+.icn {
+  padding: 0.2rem;
+  border-radius: 1rem;
+  background-color: rgb(236, 236, 236);
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: centers;
+}
+
+.user__name {
+  flex: 1;
+  text-align: center;
+}
+
+.name__h1 {
+  padding: 0.2rem 1rem;
+  background-color: rgb(236, 236, 236);
+  display: inline;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  color: gray;
+  letter-spacing: 1px;
+}
+
+.main__body {
+  padding: 1rem 1rem;
+}
+
+.profile__image {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background-color: #e6ecff;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+}
+.profile__image img {
+  width: 76px;
+}
+
+.info {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.student__name {
+  font-size: 1.2rem;
+  color: rgb(47, 103, 194);
+  font-weight: 500;
+}
+
+.year__sec_sem {
+  list-style: circle;
+  margin-left: 1rem;
+}
+
+.moreInfo__contact__body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.moreInfo {
+  padding: 1rem;
+}
+
+.contactus {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6ecff;
+  border-radius: 1rem;
+}
+
+.contactus .contactus__header {
+  padding: 0.5rem 1rem;
+  background-color: #d9e2ff;
+  border-radius: 1rem 1rem 0rem 0rem;
+  text-align: center;
+}
+
+.contact__body {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: gray;
+}
+
+.con__iocn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.contact__iocn {
+  font-size: 1.2rem;
+}
+
+/* user marks */
+
+.main__container__table {
+  width: inherit;
+  width: 100%;
+  max-height: 45vh;
+  overflow: scroll;
+}
+
+.marks__table{
+    width: inherit;
+    min-height: 10vh;
+    max-height: 40vh;
+    border: 1px solid gainsboro;
+}
+
+.marks__table__heading {
+  max-width: 5rem !important;
+}
+
+.main__container__table::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.main__container__table::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.main__container__table:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.marks__td:not(:first-of-type) {
+  min-width: 7rem;
+  text-align: center;
+}
+
+.marks__td{
+    min-width: 7rem;
+    text-align: center;
+}
+
+.td__edit{
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .moreInfo__contact__body {
+    flex-direction: column;
+  }
+}

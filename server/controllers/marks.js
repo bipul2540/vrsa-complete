@@ -1,34 +1,36 @@
 import Marks from "../models/markSchema.js";
 
 export const updateMarks = async (req, res) => {
-  console.log(req.body);
-  const { regNo, internal, external } = req.body;
+  const { regNo, semester, value } = req.body;
 
-  const student = await Marks.findOne({ regNo });
+  const reg = regNo.toLowerCase();
+  const marks = await Marks.findOne({ regNo: reg, semester });
 
-  if (student) {
-    await Marks.updateOne(
-      { regNo },
-      {
-        $set: {
-          internal,
-          external,
-        },
-      }
-    );
+  const val = value.map((item) => {
+    return {
+      course_name: item.course,
+      internal_marks: {
+        firstIa: item.IA1 ? item.IA1 : "",
+        secondIa: item.IA2 ? item.IA2 : "",
+        thirdIa: item.IA3 ? item.IA3 : "",
+      },
+      assingment: item.assignment ? item.assignment : "",
+      external_marks: item.CIE ? item.CIE : "",
+    };
+  });
+
+  if (marks) {
+    return res
+      .status(400)
+      .json({ message: "user alredy found please update marks" });
   } else {
-    const result = new Marks({
-      regNo,
-      internal,
-      external,
+    const data = new Marks({
+      regNo: reg,
+      semester,
+      marks: val,
     });
 
-    await result.save();
-  }
-
-  res.status(200).json({ message: "successfully saved" });
-  try {
-  } catch (error) {
-    res.status(500).json({ message: "error" });
+    await data.save();
+    res.status(200).json({ message: "updated into the marks" });
   }
 };

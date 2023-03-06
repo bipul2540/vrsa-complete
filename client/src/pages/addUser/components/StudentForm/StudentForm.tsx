@@ -275,7 +275,16 @@ const StudentForm = () => {
               handleBlur={handleBlur}
               touched={touched.semester}
               error={errors.semester}
-              options={[1, 2, 3, 4, 5, , 6, 7, 8]}
+              options={[
+                "1st",
+                "2nd",
+                "3rd",
+                "4rth",
+                "5th",
+                "6th",
+                "7th",
+                "8th",
+              ]}
             />
           </div>
 

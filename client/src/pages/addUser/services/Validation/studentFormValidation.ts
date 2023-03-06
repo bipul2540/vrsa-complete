@@ -22,5 +22,5 @@ export const validationSchema = Yup.object().shape({
   section: Yup.string().required("Section is required field"),
   year: Yup.string().required("year is required !!"),
   department: Yup.string().required("Department name is required !!"),
-  semester: Yup.number().required("Semester is required !!"),
+  semester: Yup.string().required("Semester is required !!"),
 });

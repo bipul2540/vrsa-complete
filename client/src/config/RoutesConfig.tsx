@@ -18,6 +18,7 @@ import RemoveUser from "../pages/removeUser/RemoveUser";
 import StudentForm from "../pages/addUser/components/StudentForm/StudentForm";
 import CourseForm from "../pages/addUser/components/CourseForm/CourseForm";
 import MarksFrom from "../pages/addUser/components/MarksForm/MarksForm";
+import UserDetailPage from "../pages/viewUser/UserDetailPage/UserDetailPage";
 
 const user = getUser();
 console.log(user);
@@ -106,6 +107,12 @@ const routerConfig = createBrowserRouter([
       {
         path: "/teacher/home/view-user",
         element: <ViewUser />,
+        children: [
+          {
+            path: "/teacher/home/view-user/:regNo",
+            element: <UserDetailPage />,
+          },
+        ],
       },
       {
         path: "/teacher/home/analyze-marks",

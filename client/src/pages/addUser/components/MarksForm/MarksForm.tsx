@@ -52,6 +52,7 @@ const MarksFrom = () => {
   const [disableInput, setdisableInput] = useState(false);
   const [courses, setCourses] = useState([]);
   const [error, setError] = useState(false);
+  const [err_msg, setErr_msg] = useState("");
   const handleSearchClick = async () => {
     if (values.regNo.length === 0) {
       touched.regNo = true;
@@ -59,6 +60,7 @@ const MarksFrom = () => {
     } else {
       touched.regNo = false;
       const result = await getCourse(values.regNo, values.semester);
+
       console.log(result);
       if (result.data && result.status === 200) {
         setCourses(result.data.data);
@@ -70,6 +72,7 @@ const MarksFrom = () => {
       }
       if (result.response.status === 400) {
         setError(true);
+        setErr_msg(result.response.data.message);
       }
     }
   };
@@ -79,7 +82,6 @@ const MarksFrom = () => {
   setTimeout(() => {
     setAnimate(false);
   }, 10000);
-
 
   return (
     <div className={styles.main__container}>
@@ -138,13 +140,11 @@ const MarksFrom = () => {
         ) : (
           <div className={styles.marks__entry__group}>
             {courses.length !== 0 && !error ? (
-              courses.map((item) => {
-                return (
-                  <MarkInput
-                    courseName={item}
-                  />
-                );
-              })
+              <MarkInput
+                courses={courses}
+                regNo={values.regNo}
+                semester={values.semester}
+              />
             ) : (
               <p className={styles.instruction}>
                 Search with the student USN and Semester to Enter the Marks
@@ -154,15 +154,11 @@ const MarksFrom = () => {
             {error ? (
               <ShowError
                 email={values.regNo}
-                err_msg='User with  this registration number is not found please register the user first and then add the marks'
+                err_msg={err_msg}
                 setError={setError}
+                link='http://localhost:5173/teacher/home/add-user/student-form'
               />
             ) : null}
-            {courses.length !== 0 ? (
-              <p className={styles.register__btn}>Register</p>
-            ) : (
-              ""
-            )}
           </div>
         )}
       </div>

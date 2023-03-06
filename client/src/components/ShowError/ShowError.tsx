@@ -1,12 +1,14 @@
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import styles from "./ShowError.module.css";
 type errProps = {
   err_msg: string;
   setError: any;
   email: string;
+  link: any;
 };
 
-const ShowError = ({ err_msg, email, setError }: errProps) => {
+const ShowError = ({ err_msg, email, setError, link }: errProps) => {
   setTimeout(() => {
     setError(false);
   }, 400000);
@@ -23,6 +25,10 @@ const ShowError = ({ err_msg, email, setError }: errProps) => {
             </span>
           )}
           {err_msg}
+
+          <Link to={link} className={styles.link__desing}>
+            Click here
+          </Link>
         </h1>
         <IoClose
           className={styles.close__icon}

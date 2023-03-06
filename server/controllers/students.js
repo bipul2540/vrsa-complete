@@ -42,19 +42,23 @@ export const postStudent = async (req, res) => {
 };
 
 export const getStudentsWithRegNo = async (req, res) => {
-  const regNo = req.params.regNo;
-  console.log(regNo);
-  const student = await Student.findOne({ regNo });
+  const { regNo } = req.body;
+  const reg = regNo.toLowerCase();
+  const student = await Student.findOne({ regNo: reg });
 
   if (student) {
-    res
-      .status(200)
-      .json({
-        regNo: student.regNo,
-        semester: student.semester,
-        section: student.section,
-      });
+    res.status(200).json({ student });
   } else {
     res.status(400).json({ message: "user not found" });
+  }
+};
+
+export const getAllStudent = async (req, res) => {
+  try {
+    const students = await Student.find();
+
+    res.status(200).json({ students });
+  } catch (err) {
+    res.status(400).json({ message: "user not fouund" });
   }
 };

@@ -36,7 +36,7 @@
   text-align: center;
   margin: 0 auto;
   padding: 0.5rem 2rem;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color) !important;
   color: white;
   border-radius: 0.4rem;
   cursor: pointer;
@@ -44,7 +44,7 @@
 }
 
 .register__btn:hover {
-  background-color: #0a61e3;
+  background-color: #0a61e3 !important;
 }
 
 @media only screen and (max-width: 490px) {
@@ -195,4 +195,22 @@ color: rgb(75, 75, 75);
 
 .book__animation img{
   width: 5rem
+}
+
+
+/* MARKinpUT CONTIANER */
+
+
+.input__container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem !important;
+
+}
+
+.main__marks_input__contianer{
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  align-items: center;
 }

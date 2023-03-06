@@ -25,7 +25,7 @@ export const RegisterStudent = async (data: any) => {
     const res = await axios.post(
       "http://localhost:3001/api/students/register-student",
       {
-        name: firstName + lastName,
+        name: firstName + " " + lastName,
         email,
         phone,
         address: {
