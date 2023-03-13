@@ -1,7 +1,7 @@
 .main__page__container {
   background-color: #fff;
   margin-top: 2rem;
-  padding: 1rem 1rem;
+  /* padding: 1rem 1rem; */
   height: 100%;
   background-color: #fff;
 }
@@ -9,8 +9,6 @@
 .table {
   width: 100%;
   background-color: #fff5;
-  backdrop-filter: blur(7px);
-  box-shadow: 0 0.4rem 0.8rem #0005;
   border-radius: 0.8rem;
   overflow: hidden;
 }
@@ -22,6 +20,11 @@
   padding: 0.8rem 1rem;
   font-size: 1.2rem;
   font-weight: 500;
+  border-radius: 1rem 1rem 0rem 0rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 1px solid gray;
+  color: rgb(48, 48, 48);
 }
 
 .table__body {
@@ -29,8 +32,8 @@
   height: 60vh;
   background-color: rgba(255, 255, 255, 0.733);
   margin: .8rem auto;
-  border-radius: .6rem;
   overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .table__body::-webkit-scrollbar{
@@ -47,6 +50,32 @@
 
 .table__body:hover::-webkit-scrollbar-thumb{
     visibility: visible;
+}
+
+
+
+
+
+/* TOTAL STUDENTS GRAPH VIEW */
+
+.total_Student_graph_view__container{
+  background-color: #fff;
+  padding: 1rem;
+  padding-top: 2rem;
+}
+
+
+.header__container{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #000;
+
+}
+
+.graph__container{
+
+  
 }
 
 

@@ -4,7 +4,7 @@ export const registerStudentCoures = async (req, res) => {
   const { regNo, semester, section, courses } = req.body;
   try {
     const result = await StudentCourse.findOne({
-      regNo,
+      regNo: regNo.toUpperCase(),
       semester,
     });
     console.log(result);
@@ -12,7 +12,7 @@ export const registerStudentCoures = async (req, res) => {
     if (result) {
       const data = await StudentCourse.findOneAndUpdate(
         {
-          regNo,
+          regNo: regNo.toUpperCase(),
           semester,
         },
         {
@@ -26,7 +26,7 @@ export const registerStudentCoures = async (req, res) => {
       res.status(200).json({ message: data });
     } else {
       const data = new StudentCourse({
-        regNo,
+        regNo: regNo.toUpperCase(),
         semester,
         section,
         courses,
@@ -43,7 +43,7 @@ export const registerStudentCoures = async (req, res) => {
 
 export const getStudentCourse = async (req, res) => {
   const { regNo, semester } = req.body;
-  const reg = regNo.toLowerCase();
+  const reg = regNo.toUpperCase();
   const student = await StudentCourse.findOne({
     regNo: reg,
     semester,
@@ -63,8 +63,12 @@ export const getStudentCourse = async (req, res) => {
 
 export const getCourseWithUSN = async (req, res) => {
   const { regNo } = req.body;
+  console.log(regNo);
+  try {
+    const course = await StudentCourse.find({ regNo });
 
-  const course = await StudentCourse.findOne({ regNo });
-
-  console.log(course);
+    res.status(200).json({ course });
+  } catch (error) {
+    res.status(400).json({ message: "sorrry" });
+  }
 };

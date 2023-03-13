@@ -1,0 +1,364 @@
+.main__container_filter {
+  border: 1px solid gainsboro;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  gap: 1rem;
+}
+
+.filter__icon_div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid gainsboro;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.search__bar {
+  display: flex;
+  align-items: center;
+  border: 2px solid gainsboro;
+  border-radius: 1rem;
+  padding: 0rem 0.5rem;
+}
+
+.search__field {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  outline: none;
+  padding-left: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.search__bar:hover {
+  border: 2px solid var(--primary-color);
+}
+.search__icon {
+  height: 100%;
+  color: gray;
+  cursor: pointer;
+}
+
+.search__icon:hover {
+  color: var(--primary-color);
+}
+
+.marks__filter {
+  position: fixed;
+  min-width: 20rem;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.7rem;
+  z-index: 5;
+}
+
+.marks__header {
+  padding: 1rem 1rem 0.3rem 1rem;
+  border-bottom: 1px solid gainsboro;
+  color: gray;
+}
+
+.marks__modal {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.subject__filter{
+  border-radius: 0.5rem;
+  max-height: 20rem;
+  overflow-y: scroll;
+}
+
+
+
+.subject__filter::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.subject__filter::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.subject__filter:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+
+
+.search__area{
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  border-bottom: 1px solid gainsboro;
+  position: relative;
+}
+.filter__search__icon{
+position: absolute;
+top: 25%;
+right: 5%;
+font-size: 1.3rem;
+color: gray;
+}
+
+.search{
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  outline: none;
+  color: rgb(57, 57, 57);
+  font-weight: 500;
+}
+
+
+.changeColor{
+  color: #6871f1;
+  border: 1px solid #6871f1;
+}
+
+.checkBox__input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* padding: 1rem; */
+}
+
+.checkbox__wrapper{
+  padding: 0.5rem 1rem;
+
+}
+
+.checkbox__wrapper:hover{
+  background-color: aliceblue;
+}
+
+.checkbox__wrapper input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox__wrapper label {
+  display: inline-block;
+}
+
+.checkbox__wrapper .cbx {
+  position: relative;
+  top: 1px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #c8ccd4;
+  border-radius: 3px;
+  vertical-align: middle;
+  transition: background 0.1s ease;
+  cursor: pointer;
+}
+.checkbox__wrapper .cbx:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 11px;
+  opacity: 0;
+  transform: rotate(45deg) scale(0);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
+  transition-delay: 0.15s;
+}
+.checkbox__wrapper .lbl {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.checkbox__wrapper input[type="checkbox"]:checked ~ .cbx {
+  border-color: transparent;
+  background: #6871f1;
+  animation: jelly-42 0.6s ease;
+}
+.checkbox__wrapper input[type="checkbox"]:checked ~ .cbx:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+.checkbox__wrapper .cntr {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+@-moz-keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@-o-keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.value__div {
+  display: flex;
+  margin-left: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.rating {
+  background-color: rgb(201, 255, 201);
+  color: green;
+  border-radius: 0.3rem;
+  font-weight: 530;
+}
+
+.marks__between {
+  color: gray;
+}
+
+.green{
+  margin-right: 0.5rem;
+  padding: 0rem 0.4rem;
+  border: 1px solid rgb(155, 253, 155);
+}
+
+.red {
+  padding: 0rem 0.4rem;
+  margin-right: 0.5rem;
+
+  border: 1px solid rgb(255, 180, 180);
+  color: rgb(185, 52, 52);
+  background-color: #ffd4d4;
+}
+
+.yellow{
+  padding: 0rem 0.4rem;
+margin-right: 0.5rem;
+color: rgb(147, 147, 41);
+background-color: rgb(255, 255, 217);
+border: 1px solid yellow;
+}
+
+
+.blue{
+  margin-right: 0.5rem;
+  padding: 0rem 0.4rem;
+  color: rgb(17, 99, 162);
+  background-color: rgb(212, 225, 255);
+  border: 1px solid rgb(202, 202, 255);
+}
+
+.next__options{
+  display: flex;
+align-items: center;
+padding: 0.5rem 1rem;
+justify-content: flex-end;
+color: gray;
+/* border: 1px solid gainsboro; */
+}
+
+.filter__btn{
+  display: flex;
+  align-items: center;
+  border: 1px solid gainsboro;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.filter__btn:hover{
+  color: #6871f1;
+  background-color: #dcdef8;
+  border: 1px solid #6871f1;
+}

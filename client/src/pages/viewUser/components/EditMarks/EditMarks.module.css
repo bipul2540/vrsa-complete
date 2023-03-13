@@ -1,0 +1,84 @@
+.modal__container {
+  box-shadow: var(--box-shadow);
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+
+
+.header{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid gainsboro;
+}
+
+.edit__head{
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(49, 49, 49)
+    
+}
+
+.close__iocn{
+
+    border-radius: 1rem;
+    background-color: rgb(255, 206, 206);
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: red;
+}
+.form__container{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    align-items: center;
+
+}
+
+.input__fields{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.input__fields input{
+    width: 3.4rem;
+    border: 1px solid rgb(162, 162, 162);
+    text-align: center;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+
+.icon__div{
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: rgba(1, 117, 70, 0.712);
+    border-radius: 1rem;
+    background-color: rgb(223, 255, 223);
+
+}
+
+.icon__div:hover{
+    background-color: rgb(193, 255, 193);
+}
+
+.marks__update_success{
+
+    background-color: #d1ffee;
+    color: green;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.courses__name{
+    font-weight: bold;
+}

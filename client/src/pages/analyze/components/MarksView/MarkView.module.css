@@ -1,0 +1,166 @@
+.main__container {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  gap: 0.5rem;
+  width: 1rem;
+}
+
+.table {
+  width: 30rem;
+  height: 50vh;
+  overflow-y: scroll;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.table:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.table__head {
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  /* position: fixed; */
+  width: 30rem;
+  background-color: rgb(23, 145, 182);
+  color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.sort__icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.table::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.table::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table__body {
+  margin-top: 0.1rem;
+}
+
+.list__item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.7rem 1rem;
+}
+
+.head__list {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.body__list {
+  width: 100%;
+  text-align: center;
+}
+
+.list__item:nth-child(even) {
+  background-color: rgb(243, 241, 248);
+}
+
+.pass {
+  border: 1px solid rgb(189, 255, 220);
+  width: 100%;
+  padding: 0rem 0.4rem;
+  background-color: rgb(166, 255, 230);
+  color: rgb(3, 106, 82);
+  border-radius: 0.5rem;
+}
+
+.fail {
+  border: 1px solid rgb(255, 189, 210);
+  width: 100%;
+  padding: 0rem 0.4rem;
+  background-color: rgb(255, 218, 240);
+  color: rgb(106, 3, 18);
+  border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .table {
+    width: 25rem;
+    margin: 0 auto;
+  }
+
+  .table__head {
+    width: 25rem;
+  }
+}
+
+.clear__filter {
+  cursor: pointer;
+  color: rgb(208, 131, 54);
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0rem;
+  right: -4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid salmon;
+  border-radius: 1rem;
+  padding: 0rem 0.3rem;
+}
+
+.clear__filter:hover {
+  background-color: rgb(255, 240, 227);
+}
+
+
+
+.card__container__about__info{
+  border: 1px solid gainsboro;
+  margin-left: 1rem;
+  /* background-color: rgb(48, 40, 96);
+  color: white; */
+  border-radius: 1rem;
+}
+
+.number{
+  font-weight: bold;
+  color: black;
+  font-size: 1.2rem;
+}
+
+
+.analyze_heading{
+  font-size: 1.1rem;
+  font-weight: 510;
+  border-bottom: 1px solid gray;
+  padding: 1rem;
+}
+
+.anlayze__main{
+  padding: 0.5rem 1rem;
+}
+
+.anlayze_p{
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.redFail{
+  color: var(--danger-color);
+}

@@ -6,7 +6,6 @@ export const getStudentWithUsn = async (regNo: any) => {
       "http://localhost:3001/api/students/regNo",
       { regNo }
     );
-    console.log(result);
     return result;
   } catch (error) {
     console.log(error);

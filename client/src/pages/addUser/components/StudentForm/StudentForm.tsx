@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { FaStarOfLife, FaUserGraduate } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
+import AnimatedButton from "../../../../components/AnimatedButton/AnimatedButton";
 import RegisterSuccess from "../../../../components/FormRegisterComponents/RegisterSuccess/RegisterSuccess";
 import Input from "../../../../components/Input/Input";
 import SelectBox from "../../../../components/SelectBox/SelectBox";
@@ -288,9 +289,9 @@ const StudentForm = () => {
             />
           </div>
 
-          <button className={styles.register__btn} type='submit'>
-            Register
-          </button>
+          <div className={styles.btn}>
+            <AnimatedButton color={""} />
+          </div>
         </form>
       </div>
     </>

@@ -21,15 +21,11 @@ const Header = ({ searchVal, setSearchVal }) => {
           className={
             active ? `${styles.links}` : `${styles.links} ${styles.active}`
           }>
-          <p className={styles.nav__link}>
-            <Link to={""}>Students</Link>
-          </p>
-          <p className={styles.nav__link}>
-            <Link to={""}>Courses</Link>
-          </p>
-          <p className={styles.nav__link}>
-            <Link to={""}>Marks</Link>
-          </p>
+          <Link to={"/teacher/home/view-user/student/analyze"}>
+            <button className={styles.button} role='button'>
+              Analyze
+            </button>
+          </Link>
         </div>
         <div className={styles.menu__icon} onClick={handleMenuclick}>
           <img src={burger} alt='' className={styles.menu__img} />

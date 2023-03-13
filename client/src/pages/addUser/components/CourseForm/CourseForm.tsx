@@ -13,6 +13,7 @@ import {
   getStudentWithregNo,
   registerCourse,
 } from "../../services/API/registerCourses";
+import AnimatedButton from "../../../../components/AnimatedButton/AnimatedButton";
 
 const CourseForm = () => {
   const [inputValues, setInputValues] = useState([]);
@@ -181,9 +182,9 @@ const CourseForm = () => {
           </div>
         </div>
 
-        <button type='submit' className={styles.register__btn}>
-          Register
-        </button>
+        <div className={styles.btn}>
+          <AnimatedButton color={"green"} />
+        </div>
       </form>
     </div>
   );

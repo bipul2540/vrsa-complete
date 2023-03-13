@@ -20,6 +20,8 @@ const SingleStudent = ({
   const namesplit = name.split(" ");
 
   const navigate = useNavigate();
+
+
   const handleClick = () => {
     navigate(`/teacher/home/view-user/${regNo}`);
   };

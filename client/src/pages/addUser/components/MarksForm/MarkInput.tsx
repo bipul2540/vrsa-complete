@@ -1,5 +1,6 @@
 import { setIn, useFormik } from "formik";
 import React, { useEffect, useState } from "react";
+import AnimatedButton from "../../../../components/AnimatedButton/AnimatedButton";
 import ShowError from "../../../../components/ShowError/ShowError";
 import { registerMarks } from "../../services/API/marksApi";
 import { marksValidation } from "../../services/Validation/marksFormValidation";
@@ -35,13 +36,6 @@ const MarkInput = ({ courses, regNo, semester }) => {
   };
 
   const [errror, setError] = useState(false);
-  const initialValues = {};
-  const { values, errors, touched, handleBlur, handleSubmit, handleChange } =
-    useFormik({
-      initialValues,
-      validationSchema: marksValidation,
-      onSubmit: async (values, action) => {},
-    });
   console.log(inputValues);
 
   const HandleClickRegister = async () => {
@@ -54,7 +48,7 @@ const MarkInput = ({ courses, regNo, semester }) => {
   };
 
   return (
-    <form className={styles.input__container} onSubmit={handleSubmit}>
+    <form className={styles.input__container}>
       {errror && (
         <ShowError
           err_msg='You have already entered the user marks please update the marks of the user'

@@ -9,23 +9,54 @@ import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import UserMarks from "./UserMarks";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../store/store";
+import { getUser } from "../../../util/useToken";
+import BarChart from "./BarChart";
+import PieChart from "./PieChart";
+import { TotalPercentage } from "../services/marksAnalyze";
+import MarksOverView from "./MarksOverView";
+import ContactMe from "./ContactMe";
+import { isMarksUpdated } from "../../../store/slices/userSlice";
+
 const UserDetailPage = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [students, setStudent] = useState({});
+  const [semPercent, setSemPercent] = useState({});
+  const [totalPercent, setTotalPercent] = useState();
+
+  const dispatch = useDispatch();
+  const markUpdate = useSelector(
+    (state: RootState) => state.semester.marksUpdated
+  );
+
+  const getUser = async () => {
+    const user = await getStudentWithUsn(params.regNo);
+    if (user.status === 200) {
+      setStudent(user.data.student);
+    }
+  };
+
+  const semesterName = useSelector((state: RootState) => state.semester.value);
+  const getPercentage = async () => {
+    const data: any = await TotalPercentage(params.regNo);
+    setTotalPercent(data[1]);
+    setSemPercent(data[0]);
+  };
 
   useEffect(() => {
-    const getUser = async () => {
-      const user = await getStudentWithUsn(params.regNo);
-      console.log(user);
-      if (user.status === 200) {
-        setStudent(user.data.student);
-      }
-    };
     getUser();
   }, []);
-  console.log(students);
 
+  useEffect(() => {
+    getPercentage();
+    setTimeout(() => {
+      dispatch(isMarksUpdated(false));
+    }, 1000);
+  }, [markUpdate]);
+
+  console.log(semPercent, totalPercent);
   const handleBackClick = () => {
     navigate("/teacher/home/view-user");
   };
@@ -44,7 +75,7 @@ const UserDetailPage = () => {
           <img src={boy} alt='' />
           <div className={styles.info}>
             <h1 className={styles.student__name}>{students["name"]}</h1>
-            <h1 className={styles.branch}>Computer Sciene and Engineering</h1>
+            <h1 className={styles.branch}>{students["department"]}</h1>
             <ul className={styles.year__sec_sem}>
               <li>2019 Batch</li>
               <li>Sec 'A'</li>
@@ -55,37 +86,21 @@ const UserDetailPage = () => {
         </div>
 
         <div className={styles.moreInfo__contact__body}>
-          <div className={styles.moreInfo}>
-            <UserMarks
-              regNo={students["regNo"]}
-              semester={students["semester"]}
-            />
-          </div>
+          <UserMarks
+            regNo={students["regNo"]}
+            semester={students["semester"]}
+          />
+          <MarksOverView
+            semPercent={semPercent}
+            semesterName={semesterName}
+            totalPercent={totalPercent}
+          />
+          <ContactMe students={students} />
+        </div>
 
-          <div className={styles.contactus}>
-            <h1 className={styles.contactus__header}>Contact Info</h1>
-
-            <div className={styles.contact__body}>
-              <div className={styles.con__iocn}>
-                <MdEmail className={styles.contact__iocn} color='#2D7DD2' />
-                <h1>bipulkumar2540@gmail.com</h1>
-              </div>
-              <div className={styles.con__iocn}>
-                <BsTelephoneFill
-                  className={styles.contact__iocn}
-                  color='#4F1271'
-                />
-                <h1>+91 8709188657</h1>
-              </div>
-
-              <div className={styles.con__iocn}>
-                <ImLocation color='#23967F' className={styles.contact__iocn} />
-                <h1>
-                  Gottigere, Bangalore <br /> Karntaka, India <br /> 560083
-                </h1>
-              </div>
-            </div>
-          </div>
+        <div className={styles.graphs__container}>
+          <BarChart />
+          <PieChart />
         </div>
       </div>
     </div>

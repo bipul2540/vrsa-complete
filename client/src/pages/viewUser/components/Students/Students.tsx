@@ -19,7 +19,7 @@ const Students = ({ searchVal }) => {
     <div className={styles.main__page__container}>
       <div className={styles.table}>
         <div className={styles.table__header}>
-          <h1>Students</h1>
+          <h1>Registered students</h1>
         </div>
         <div className={styles.table__body}>
           <table>
@@ -64,7 +64,6 @@ const Students = ({ searchVal }) => {
           </table>
         </div>
       </div>
-      <Outlet />
     </div>
   );
 };

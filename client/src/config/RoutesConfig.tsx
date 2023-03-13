@@ -19,6 +19,7 @@ import StudentForm from "../pages/addUser/components/StudentForm/StudentForm";
 import CourseForm from "../pages/addUser/components/CourseForm/CourseForm";
 import MarksFrom from "../pages/addUser/components/MarksForm/MarksForm";
 import UserDetailPage from "../pages/viewUser/UserDetailPage/UserDetailPage";
+import StudentAnalyze from "../pages/viewUser/components/StudentAnalyze/StudentAnalyze";
 
 const user = getUser();
 console.log(user);
@@ -111,6 +112,10 @@ const routerConfig = createBrowserRouter([
           {
             path: "/teacher/home/view-user/:regNo",
             element: <UserDetailPage />,
+          },
+          {
+            path: "/teacher/home/view-user/student/analyze",
+            element: <StudentAnalyze />,
           },
         ],
       },
