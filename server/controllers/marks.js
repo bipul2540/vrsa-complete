@@ -88,5 +88,5 @@ export const getAllStudentMarks = async (req, res) => {
 
   res.status(200).json({ marks });
 
-  console.log(marks.length);
+  console.log("len", marks.length);
 };

@@ -10,7 +10,6 @@ const MarksAnalyzeCard = ({ coursePass, courseFail, checkValue }) => {
       const data = await failPass();
       setTotalFail(data[1]);
       setTotalPass(data[0]);
-      console.log(data);
     };
 
     fetchdata();
@@ -18,24 +17,24 @@ const MarksAnalyzeCard = ({ coursePass, courseFail, checkValue }) => {
 
   return (
     <div className={styles.card__container__about__info}>
-      <h1 className={styles.analyze_heading}>Student Analysis</h1>
+      <h1 className={styles.analyze_heading}>Marks overview</h1>
 
       <div className={styles.anlayze__main}>
         <p className={styles.anlayze_p}>
-          Total number of Students{" "}
+          Total number of courses
           <span className={styles.number}>
-            {(courseFail === 0 &&coursePass===0 ? totalFail : courseFail) +
-              (coursePass === 0 ? totalPass : coursePass)}
+            {(courseFail === 0 && coursePass === 0 ? totalFail : courseFail) +
+              (coursePass === 0 && courseFail === 0 ? totalPass : coursePass)}
           </span>{" "}
         </p>
         <p className={styles.anlayze_p}>
-          Number of Student Passed in subject{" "}
+          Number of Student Passed
           <span className={styles.number}>
-            {coursePass === 0 ? totalPass : coursePass}
+            {coursePass === 0 && courseFail === 0 ? totalPass : coursePass}
           </span>
         </p>
         <p className={styles.anlayze_p}>
-          Number of Student Failed in subject{" "}
+          Number of Student Failed
           <span className={`${styles.number} ${styles.redFail}`}>
             {courseFail === 0 && coursePass === 0 ? totalFail : courseFail}
           </span>

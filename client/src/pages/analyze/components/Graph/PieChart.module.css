@@ -1,0 +1,17 @@
+.graph__container{
+    border: 1px solid gainsboro;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.PieChart__heading{
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-bottom: 1px solid #bcbcbc;
+
+}

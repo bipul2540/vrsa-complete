@@ -46,10 +46,13 @@ const PieChart = () => {
     });
   }
 
+  console.log(semesterName);
+
   return (
     <div className={styles.graph__container}>
       <h1 className={styles.PieChart__heading}>
-        {semesterName} semester marks in Each subject
+        {semesterName.length > 4 ? "" : semesterName} semester marks in Each
+        subject
       </h1>
       <Chart
         type='donut'

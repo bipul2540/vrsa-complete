@@ -159,7 +159,7 @@
   flex-direction: column;
   background-color: #e6ecff;
   border-radius: 1rem;
-  max-height: 40vh;
+  max-height: 20rem;
   flex: 1s;
 }
 
@@ -296,9 +296,8 @@
 .marks__overView__conatainer{
   border:  1px solid gainsboro;
   border-radius: 0.5rem;
-  background-color: rgb(226, 255, 226);
   min-width: 15rem;
-  max-height: 40rem;
+  max-height: 20rem;
 }
 
 
@@ -311,9 +310,9 @@
   padding: 0.4rem 1rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  background-color: rgb(211, 255, 211);
   text-align: center;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
+  border-bottom: 1px solid gainsboro;
 }
 
 .marks__overView__body{
@@ -321,15 +320,34 @@
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap:1.5rem;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .marks__h1{
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 
-.h1__span{
+.progresss_label{
+  font-size: 0.8rem;
+  font-weight: 540;
+  /* color: gray; */
+}
 
+
+
+.h1__span{
   font-weight: bold;
   color: rgb(33, 39, 139);
+}
+
+
+.progress__container{
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  justify-content: space-around;
 }

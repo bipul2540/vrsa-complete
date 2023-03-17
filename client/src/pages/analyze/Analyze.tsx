@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import GradientCircleProgressbar from "../../components/ProgressCircular/Progress";
 import Filter from "./components/Filter/Filter";
 import MarksView from "./components/MarksView/MarksView";
 import { getAllMarks } from "./services/getAllMarks";
@@ -9,27 +10,12 @@ import {
 } from "./services/marksUtility";
 
 const Analyze = () => {
-  const [allMarks, setMarks] = useState([]);
-
-  useEffect(() => {
-    const getMarks = async () => {
-      const res = await getAllMarks();
-      setMarks(res);
-
-      const course = await courseName();
-      const filcourse = await filterWithCourseName("18cs73");
-
-      const seme = await filterWithSemester("8th");
-      // console.log(course, filcourse, seme);
-    };
-
-    getMarks();
-  }, []);
+  const [marks, setMarks] = useState([]);
 
   return (
     <div>
       <Filter />
-      <MarksView />
+      <MarksView marks={marks} setMarks={setMarks} />
     </div>
   );
 };

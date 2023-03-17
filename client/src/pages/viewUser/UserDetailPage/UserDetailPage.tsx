@@ -56,7 +56,6 @@ const UserDetailPage = () => {
     }, 1000);
   }, [markUpdate]);
 
-  console.log(semPercent, totalPercent);
   const handleBackClick = () => {
     navigate("/teacher/home/view-user");
   };
