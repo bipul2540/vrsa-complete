@@ -46,7 +46,6 @@ const PieChart = () => {
     });
   }
 
-  console.log(semesterName);
 
   return (
     <div className={styles.graph__container}>

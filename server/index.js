@@ -14,6 +14,8 @@ import marksRoutes from "./routes/marks.js";
 import bookRoutes from "./routes/books.js";
 import studentCoursesRoutes from './routes/studentCourses.js'
 
+import pythonRoutes from "./routes/PythonRoutes.js";
+
 /* CONFIGURATION */
 
 dotenv.config();
@@ -36,7 +38,8 @@ app.use("/api/user", authRoutes);
 app.use("/api/students", studentRoutes);
 app.use("/api/marks", marksRoutes);
 app.use("/api/books", bookRoutes);
-app.use("/api/courses", studentCoursesRoutes)
+app.use("/api/courses", studentCoursesRoutes);
+app.use("/api/python", pythonRoutes);
 
 /*================================================= */
 
